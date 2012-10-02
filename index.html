@@ -4,15 +4,26 @@
 	<title>PITYPER</title>
 	<style>
 		body {
-			background: black;
-			color: rgb(10,  200, 30);
+			background: #E5E5E5;
+			color: #444;
 			font-family: monospace;
 			word-wrap: break-word;
+			font-size: 1.75em;
+			line-height:1.5em;
+		}
+		.threePoint {
+			color:#222;
+			font-family: Georgia;
+			font-size: 2.25em;
 		}
 	</style>
 </head>
 <body>
+	<span class='threePoint'>3.</span>
 	<script type='text/javascript'>
+		var digitsNode = document.createElement('div');
+		document.body.appendChild(digitsNode);
+
 		var digits = 0;
 		var a = [];
 		var b = 0, d = 0, g = 0, h = 0;;
@@ -53,10 +64,8 @@
 
 		var handleKeydown = function(keycode) {
 			if (keycode > 47 && keycode < 58 && buf.length) {
-				if (digits == 1) {
-					document.body.innerText += '.';
-				} else if (digits < 10000) {
-					document.body.innerText += buf.shift().toString();
+				if (digits < 10000) {
+					digitsNode.innerText += buf.shift().toString();
 				}
 				digits++;
 				if (buf.length < 3) {
@@ -67,6 +76,7 @@
 
 		var buf = [];
 		nextThree();
+		buf.shift();
 		window.addEventListener('keydown', function(e) {
 			handleKeydown(e.keyCode);
 		});
