@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<title>PITYPER</title>
+	<style>
+		body {
+			background: black;
+			color: rgb(10,  200, 30);
+			font-family: monospace;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body>
+	<script type='text/javascript'>
+		var a = [];
+		var b = 0, d = 0, g = 0, h = 0;;
+		var f = 1000;
+		var c = 52514;
+		var next = function() {
+			b = c -= 14;
+			if (!b) return;
+			var e = d %= f;
+			while(g = --b * 2) {
+				d = d * b + f * (h ? a[b] : Math.floor(f/5));
+				a[b] = d % --g;
+				d = Math.floor(d/g);
+			}
+			h = 3;
+			document.body.innerText += (e + Math.floor(d/f)).toString();
+		}
+		window.addEventListener('keydown', function(e) {
+			if (e.keyCode > 47 && e.keyCode < 58) {
+				next();
+			}
+		});
+		
+		
+	</script>
+</body>
+</html>
