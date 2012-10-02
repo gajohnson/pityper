@@ -1,0 +1,29 @@
+body {
+	background: #E5E5E5;
+	color: #444;
+	font-family: monospace;
+	word-wrap: break-word;
+	font-size: 1.75em;
+	line-height:1.5em;
+}
+h1, h4 {
+	text-align:center;
+	font-family: Helvetica;
+	color:#777;
+}
+.threePoint {
+	color:#222;
+	font-family: Georgia;
+	font-size: 2.25em;
+	width: 500px;
+	margin: 0 auto;
+	left: -1em;
+	position: relative;
+	height: 0;
+}
+#digits {
+	width: 20em;
+	margin: 0 auto;
+	top: 0.75em;
+	position: relative;
+}
