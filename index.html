@@ -11,17 +11,36 @@
 			font-size: 1.75em;
 			line-height:1.5em;
 		}
+		h1, h4 {
+			text-align:center;
+			font-family: Helvetica;
+			color:#777;
+		}
 		.threePoint {
 			color:#222;
 			font-family: Georgia;
 			font-size: 2.25em;
+			width: 500px;
+			margin: 0 auto;
+			left: -1em;
+			position: relative;
+			height: 0;
+		}
+		.digits {
+			width: 500px;
+			margin: 0 auto;
+			top: 0.75em;
+			position: relative
 		}
 	</style>
 </head>
 <body>
-	<span class='threePoint'>3.</span>
+	<h1>&pi; Typer</h1>
+	<h4>Type all the &pi;!</h4>
+	<div class='threePoint'>3.</div>
 	<script type='text/javascript'>
 		var digitsNode = document.createElement('div');
+		digitsNode.className = 'digits';
 		document.body.appendChild(digitsNode);
 
 		var digits = 0;
