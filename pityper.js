@@ -7,6 +7,7 @@
     var f = 1000;
     var c = 52514;
     var lock = false;
+    var loop = null;
 
     var loadNext = function() {
         if(digits >= 10000 || lock) return;
@@ -38,6 +39,11 @@
 
         lock = false;
     }
+    var fLoop = function() {
+        handleKeydown({
+            "keyCode": 48
+        });
+    };
 
     var handleKeydown = function(e) {
         var keycode = e.keyCode;
@@ -45,18 +51,29 @@
             digits++;
             if (digits < 10000) {
                 var print = buf.shift().toString()
-                if (digits % 30 == 0) print += '<br />';
-                else if (digits % 10 == 0) print += '&nbsp;';
+                if (digits % 30 == 0) {
+                    print += '<br />';
+                } else if (digits % 10 == 0) {
+                    print += '&nbsp;';
+                }
                 digitsNode.innerHTML += print;
+                window.scrollTo(0, 10000000);
             }
             if (buf.length < 3) {
                 loadNext();
+            }
+        } else if (keycode == 32) {
+            if (loop) {
+                window.clearInterval(loop);
+                loop = null;
+            } else {
+                loop = window.setInterval(fLoop, 50);
             }
         }
     }
 
     var buf = [];
-    nextThree();
+    loadNext();
     buf.shift();
     document.addEventListener('keydown', handleKeydown, false);
 })();
