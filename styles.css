@@ -1,5 +1,5 @@
 body {
-	width: 33em;
+	width: 29em;
 	height: auto;
 
 	margin: 0 auto;
@@ -10,17 +10,23 @@ body {
 	text-align: center;
 }
 
-h1 {
+#header {
 	margin: 0.67em;
+}
+
+#header h1 {
+	margin: 0;
+	padding: 0;
 
 	color: #446;
 	font-family: 'Kotta One', serif;
 	font-size: 4.25em;
 	text-shadow: 5px 9px 8px #E0E0ED;
 }
-.threePoint {
+
+#threePoint {
 	position: relative;
-	left: -5.85em;
+	left: -5.175em;
 	top: 0.488em;
 	height: 0;
 
@@ -30,6 +36,7 @@ h1 {
 	font-family: 'Kotta One', serif;
 	font-size: 3em;
 }
+
 #digits {
 	position: relative;
 	top: 1em;
