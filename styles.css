@@ -10,11 +10,11 @@ body {
 	text-align: center;
 }
 
-h1, h4 {
+h1 {
 	margin: 0.67em;
 
 	color: #446;
-	font-family: Helvetica;
+	font-family: 'Kotta One', serif;
 	font-size: 4.25em;
 	text-shadow: 5px 9px 8px #E0E0ED;
 }
@@ -26,8 +26,8 @@ h1, h4 {
 
 	margin: 0 auto;
 
-	color: #222;
-	font-family: Georgia;
+	color: #446;
+	font-family: 'Kotta One', serif;
 	font-size: 3em;
 }
 #digits {
