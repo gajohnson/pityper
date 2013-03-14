@@ -9,8 +9,8 @@
     var loop = null;
     var ctr = 0;
 
-    var handleKeydown = function(e) {
-        var keycode = e.keyCode;
+    var handleKeypress = function(e) {
+        var keycode = e.which;
         if (keycode > 47 && keycode < 58) {
             next();
         } else if (keycode == 32) {
@@ -79,7 +79,7 @@
 
     loadBuf();
     buf.shift(); // Ignore the first 3.
-    document.addEventListener('keydown', handleKeydown, false);
+    document.addEventListener('keypress', handleKeypress, false);
     document.getElementById('header').addEventListener('click', handleLoop, false);
     document.getElementById('digits').addEventListener('click', handleLoop, false);
 })();
